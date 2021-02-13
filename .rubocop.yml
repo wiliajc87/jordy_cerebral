@@ -1,0 +1,11 @@
+AllCops:
+  Excludes:
+    - bin/**
+    - config/**
+    - db/**
+    - spec/**/*.rb
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false

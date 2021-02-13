@@ -1,0 +1,17 @@
+<h1>Name: <%= @user.name %></h1>
+<h2>Email: <%= @user.email %></h2>
+
+<h2>Status: <%= @user.status %></h2>
+<% if @user.new? %>
+  <%= form_with url: payments_path, method: :post do |form| %>
+    <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.submit "Complete Payment" %>
+  <% end %>
+<% end %>
+
+<% if @user.paid? %>
+  <%= form_with url: payment_path, method: :delete do |form| %>
+    <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.submit "Cancel" %>
+  <% end %>
+<% end %>
